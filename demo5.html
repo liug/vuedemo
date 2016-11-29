@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<!--
+        	作者：liug_hx@live.cn
+        	时间：2016-11-12
+        	描述：时间绑定
+        	新知识：v-on事件绑定
+        	split：分割字符串，输出数组
+        	reverse：反转
+        	join:将数组放到一个字符串中，输出字符串
+        -->
+	</head>
+	<body>
+		<div id="app-5">
+		  <p>{{ message }}</p>
+		  <button v-on:click="reverseMessage">Reverse Message</button>
+		</div>
+		
+		<script>
+			var app5 = new Vue({
+			  el: '#app-5',
+			  data: {
+			    message: 'Hello Vue.js!'
+			  },
+			  methods: {
+			    reverseMessage: function () {
+			    	//只需要操作数据对象，DOM操作由VUE处理
+			      this.message = this.message.split('').reverse().join('')
+			    }
+			  }
+			});
+			
+		</script>
+	</body>
+</html>

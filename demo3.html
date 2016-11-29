@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<!--
+        	作者：liug_hx@live.cn
+        	时间：2016-11-12
+        	描述：条件判断效果展示
+        	新知识：v-if 用来判断的；
+        	代码中通过v-if与vue实例化对象中seen属性绑定
+        -->
+	</head>
+	<body>
+		<div id="app-3">
+		  <p v-if="seen">Now you see me</p>
+		</div>
+		
+		<script>
+			var app3 = new Vue({
+			  el: '#app-3',
+			  data: {
+			    seen: true
+			  }
+			});
+			//执行下面一句代码后，p标签消失不见
+			app3.seen=false;
+		</script>
+	</body>
+</html>

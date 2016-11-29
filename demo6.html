@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<!--
+        	作者：liug_hx@live.cn
+        	时间：2016-11-12
+        	描述：处理用户输入与DOM元素绑定
+        	新知识：v-model 可以在表单输入和应用状态中做双向数据绑定
+        -->
+	</head>
+	<body>
+		<div id="app-6">
+		  <p>{{ message }}</p>
+		  <input v-model="message">
+		</div>	
+		
+		<script>
+			//修改input的值，P标签的值会跟着变
+			var app6 = new Vue({
+			  el: '#app-6',
+			  data: {
+			    message: 'Hello Vue!'
+			  }
+			});
+			
+		</script>
+	</body>
+</html>

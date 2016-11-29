@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<!--
+        	作者：liug_hx@live.cn
+        	时间：2016-11-12
+        	描述：组件
+        	新知识：Vue.component 创建组件，并在html代码中使用
+        	通过v-bind将绑定的数据字段动态输出
+        -->
+	</head>
+	<body>
+		<div id="app-7">
+		  <ol>
+		    <!-- Now we provide each todo-item with the todo object    -->
+		    <!-- it's representing, so that its content can be dynamic -->
+		    <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+		  </ol>
+		</div>
+		
+		<script>
+			Vue.component('todo-item', {
+			  // The todo-item component now accepts a
+			  // "prop", which is like a custom attribute.
+			  // This prop is called todo.
+			  props: ['todo'],
+			  template: '<li>{{ todo.text }}</li>'
+			});
+			var app7 = new Vue({
+			  el: '#app-7',
+			  data: {
+			    groceryList: [
+			      { text: 'Vegetables' },
+			      { text: 'Cheese' },
+			      { text: 'Whatever else humans are supposed to eat' }
+			    ]
+			  }
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/vue.js" ></script>
+		<!--
+        	作者：liug_hx@live.cn
+        	时间：2016-11-12
+        	描述：for循环效果展示
+        	新知识：v-for 用来循环展出
+        	类似于foreach语法
+        -->
+	</head>
+	<body>
+		<div id="app-4">
+		  <ol>
+		    <li v-for="todo in todos">
+		      {{ todo.text }}
+		    </li>
+		  </ol>
+		</div>
+		
+		<script>
+			var app4 = new Vue({
+			  el: '#app-4',
+			  data: {
+			    todos: [
+			      { text: 'Learn JavaScript' },
+			      { text: 'Learn Vue' },
+			      { text: 'Build something awesome' }
+			    ]
+			  }
+			});
+			//新增命令
+			app4.todos.push({ text: 'New item' })
+		</script>
+	</body>
+</html>
